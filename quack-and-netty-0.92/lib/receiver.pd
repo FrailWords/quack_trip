@@ -1,4 +1,4 @@
-#N canvas 563 321 1824 979 12;
+#N canvas 334 25 1792 1067 12;
 #X declare -path lib/quacktrip~ -path lib;
 #X obj 523 264 declare -path lib/quacktrip~ -path lib;
 #X floatatom 99 16 3 0 100 0 - #0-lvl-set #0-lvl;
@@ -18,7 +18,7 @@
 -1 -1 0 1;
 #X text 75 125 ch;
 #X text 12 89 balance;
-#N canvas 751 118 1809 1071 audio-out 1;
+#N canvas 751 118 1809 1071 audio-out 0;
 #X obj 1213 483 t b;
 #X obj 1213 430 f;
 #X obj 1213 508 f;
@@ -320,8 +320,8 @@
 #X obj 1139 659 b;
 #X obj 1142 729 f;
 #X obj 1174 730 + 1;
-#X obj 79 258 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 79 258 bng 15 250 50 0 \$0-reset-packets \$0-reset-packets-set
+empty 17 7 0 10 -262144 -1 -1;
 #X text 38 256 reset;
 #X msg 1089 659 0;
 #X obj 1049 702 b;
@@ -391,7 +391,7 @@ running bw, f 68;
 #X obj 1311 891 change;
 #X obj 1311 916 s \$0-mono;
 #X obj 80 18 vsl 15 101 0 100 0 0 \$0-lvl \$0-lvl-set empty 0 -9 0
-10 -262144 -1 -1 5000 1;
+10 -262144 -1 -1 3700 1;
 #X text 25 59 gain-->;
 #X text 18 47 normal;
 #X obj 511 521 print foo;
@@ -406,6 +406,41 @@ running bw, f 68;
 #X obj 148 42 vu 8 80 \$0-vu22 empty -1 -8 0 10 -66577 -1 0 0;
 #X floatatom 129 127 2 1 99 0 - #0-ch21-set #0-ch21;
 #X floatatom 145 127 2 1 99 0 - #0-ch22-set #0-ch22;
+#X obj 861 896 s \$0-happening;
+#N canvas 399 165 1125 569 receiver-ui 1;
+#X obj 164 240 r \$1-\$2-channel-name;
+#X obj 248 284 select -;
+#X obj 196 497 s receiver-values;
+#X obj 671 351 loadbang;
+#X obj 367 404 spigot;
+#X msg 449 428 1;
+#X obj 509 442 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 440 394 0;
+#X obj 497 371 delay 1;
+#X obj 563 416 metro 500;
+#X obj 595 371 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 504 239 r \$0-packets-in;
+#X obj 295 365 pack \$0 s f;
+#X obj 369 240 r \$0-happening;
+#X obj 342 308 sel 1;
+#X connect 0 0 1 0;
+#X connect 1 1 12 1;
+#X connect 3 0 9 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 1;
+#X connect 6 0 8 0;
+#X connect 7 0 4 1;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 9 0 6 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 2;
+#X connect 12 0 4 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X restore 1289 330 pd receiver-ui;
 #X connect 16 0 17 4;
 #X connect 17 0 60 0;
 #X connect 17 1 54 0;
@@ -451,6 +486,7 @@ running bw, f 68;
 #X connect 59 0 14 0;
 #X connect 60 0 59 0;
 #X connect 63 0 18 0;
+#X connect 63 0 109 0;
 #X connect 63 2 48 0;
 #X connect 63 3 84 0;
 #X connect 63 3 86 0;
