@@ -1,6 +1,6 @@
-#N canvas 41 54 1740 861 12;
+#N canvas 8 29 1740 861 12;
 #X declare -path lib/quacktrip~ -path lib;
-#N canvas 203 439 1792 1067 main-panel 0;
+#N canvas 0 25 1792 1067 main-panel 0;
 #X text 81 278 server;
 #X symbolatom 83 299 32 0 0 0 - #0-server-set #0-server;
 #X obj 225 402 tgl 15 0 \$0-onoff \$0-onoff-set empty 17 7 0 10 -262144
@@ -11,7 +11,7 @@
 #X text 158 161 128;
 #X text 159 175 256;
 #X obj 94 145 vradio 15 1 0 5 \$0-nchan \$0-nchan-set empty 0 -8 0
-10 -262144 -1 -1 1;
+10 -262144 -1 -1 2;
 #X text 111 142 0;
 #X text 112 157 1;
 #X text 112 172 2;
@@ -629,7 +629,7 @@ c s l r m p \; f g k n r t \;;
 #X symbolatom 79 379 32 0 0 0 - #0-status-set #0-status;
 #X text 68 358 ----- status and output stats -----;
 #X obj 278 93 vsl 15 101 0 100 0 0 \$0-lvl \$0-lvl-set empty 0 -9 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 4000 1;
 #X text 145 86 - SEND AUDIO -;
 #X text 211 121 normal;
 #X text 219 134 gain -->;
