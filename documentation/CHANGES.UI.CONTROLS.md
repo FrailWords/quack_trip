@@ -31,7 +31,7 @@ All receiver values are sent on indexed path names. For e.g. receiver at index 1
 * Add `s $0-happening` to the `got-packet` route of the `route` outlet (first outlet) - this is used to check if the
   connection is active or not. When we stop receiving packets on a particular receiver for a few seconds, we consider it
   disconnected.
-* Add `pd receiver-ui` sub-patch.
+* Add `pd receiver-ui` sub-patch.  It sends out a packet every metro `500` millisecond with the values of the "index" of the receiver, the sub-patch number in Pd and the channel name of the receiver.  The sub-patch number is required to send back values to the correct receiver.
 ![](images/ui_controls/receiver_ui.png)
 ## Verify changes
 
