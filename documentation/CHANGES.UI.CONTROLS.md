@@ -32,7 +32,7 @@ All receiver values are sent on indexed path names. For e.g. receiver at index 1
   connection is active or not. When we stop receiving packets on a particular receiver for a few seconds, we consider it
   disconnected.
 * Add `pd receiver-ui` sub-patch.
-
+![](images/ui_controls/receiver_ui.png)
 ## Verify changes
 
 You can verify the changes by running the Electron app from `part-ui` repository on the same laptop/computer and see if
