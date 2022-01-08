@@ -1,4 +1,4 @@
-#N canvas 0 25 1792 1067 12;
+#N canvas 801 28 1792 1067 12;
 #X declare -path lib/quacktrip~ -path lib;
 #X obj 523 264 declare -path lib/quacktrip~ -path lib;
 #X floatatom 99 16 3 0 100 0 - #0-lvl-set #0-lvl;
@@ -391,7 +391,7 @@ running bw, f 68;
 #X obj 1311 891 change;
 #X obj 1311 916 s \$0-mono;
 #X obj 80 18 vsl 15 101 0 100 0 0 \$0-lvl \$0-lvl-set empty 0 -9 0
-10 -262144 -1 -1 4200 1;
+10 -262144 -1 -1 0 1;
 #X text 25 59 gain-->;
 #X text 18 47 normal;
 #X obj 511 521 print foo;
