@@ -19,6 +19,8 @@ build and run the Electron app, check the readme in that repository.
 
 ![](images/ui_controls/send_receive_ui.png)
 
+All receiver values are sent on indexed path names. For e.g. receiver at index 1 would be sent to `/receiver1` OSC path and receiver at index 2 would be sent to `/receiver2` path and so on.
+
 4. Open `receiver` sub-patch
 
 ![](images/ui_controls/receiver.png)
