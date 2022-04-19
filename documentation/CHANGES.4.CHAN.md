@@ -3,6 +3,10 @@
 By default, Netty supports 2 channel audio send and receive. 
 This document describes the changes made to the Netty patch to support **4 channel audio send and receive**.
 
+## Download Patch
+
+The patch is available in the `quack-and-netty-0.92` directory at the root level.
+
 ## List Of Changes
 
 ### Changes to `main_panel` -
@@ -51,7 +55,8 @@ The `main_panel` should look like this for the `quacktrip~`
 * The gain level (both input and output) is only available per 2-channel audio combination and not per every individual channel of the 4 channels.
 * The server and the client should be run on separate machines always because, if run on the same machine, the network traffic overwhelms the patch and the sound packets start dropping off.
 
-
+## Extend to more channels 
+Since the original patch was only designed to work for 2-channels, the wiring in the patch was too rigid and not easy to extend. Hence, the 4-channel version extension is more of a copy-paste solution over the previous solution as compared to making it more `configurable`. The ideal state would be make it more configurable to accept more I/O channels but only if its wort the effort.  Otherwise, copy-paste would work with some limitations as noted above.
 
 
 
