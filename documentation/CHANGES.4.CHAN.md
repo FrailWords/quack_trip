@@ -47,6 +47,9 @@ The `main_panel` should look like this for the `quacktrip~`
 4. Set the default channel numbers for the `receiver` in `pd more-setctl` sub-patch - 
 ![](images/4_chan/receiver_more_ctl.png)
 
+## Known Limitations/Points To Note
+* The gain level (both input and output) is only available per 2-channel audio combination and not per every individual channel of the 4 channels.
+* The server and the client should be run on separate machines always because, if run on the same machine, the network traffic overwhelms the patch and the sound packets start dropping off.
 
 
 
